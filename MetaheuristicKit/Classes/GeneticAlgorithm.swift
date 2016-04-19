@@ -470,26 +470,7 @@ public class GeneticAlgorithm {
      
      - SeeAlso: "Essentials of Metaheuristics", Sean Luke, Seite 41
      */
-    /*public func uniformCrossoverAmongKVectors<T>(parents parents: [[T]]) -> [[T]] {
-        
-        var children: [[T]] = []
-        let numberOfChildren   = children.count
-        let lengthOfIndividuum = children[0].count
-        
-        for index in 0...lengthOfIndividuum {
-            if probabilityOfCrossover >= randomFloatInRange(firstNum: 0.0, secondNum: 1.0) {
-                for otherIndex in 0...numberOfChildren {
-                    
-                }
-                randomVectorShuffle(&children)
-                for otherIndex in 0...numberOfChildren {
-                    
-                }
-            }
-        }
-        
-        return children
-    }*/
+    public func uniformCrossoverAmongKVectors(){}
     
     /**
      <#Description#>
