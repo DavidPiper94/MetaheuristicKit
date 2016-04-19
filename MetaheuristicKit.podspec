@@ -1,5 +1,3 @@
-# Be sure to run `pod lib lint MetaheuristicKit.podspec' to ensure this is a
-
 Pod::Spec.new do |s|
   s.name             = "MetaheuristicKit"
   s.version          = "0.1.0"
@@ -8,17 +6,11 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/DavidPiper94/MetaheuristicKit"
   s.license          = 'MIT'
   s.author           = { "DavidPiper94" => "david.piper@udo.edu" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/MetaheuristicKit.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/DavidPiper94/MetaheuristicKit.git", :tag => '0.1.0' }
 
-  s.ios.deployment_target = '8.0'
+  s.platform = :ios
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'MetaheuristicKit/Classes/**/*'
-  s.resource_bundles = {
-    'MetaheuristicKit' => ['MetaheuristicKit/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.resource_bundles = { 'MetaheuristicKit' => ['MetaheuristicKit/Assets/*.png'] }
 end

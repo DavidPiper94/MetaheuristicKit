@@ -470,7 +470,7 @@ public class GeneticAlgorithm {
      
      - SeeAlso: "Essentials of Metaheuristics", Sean Luke, Seite 41
      */
-    public func uniformCrossoverAmongKVectors<T>(parents parents: [[T]]) -> [[T]] {
+    /*public func uniformCrossoverAmongKVectors<T>(parents parents: [[T]]) -> [[T]] {
         
         var children: [[T]] = []
         let numberOfChildren   = children.count
@@ -489,7 +489,7 @@ public class GeneticAlgorithm {
         }
         
         return children
-    }
+    }*/
     
     /**
      <#Description#>
