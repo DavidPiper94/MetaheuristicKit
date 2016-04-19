@@ -1,0 +1,6 @@
+framework module Pods_MetaheuristicKit_Tests {
+  umbrella header "Pods-MetaheuristicKit_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "MetaheuristicKit",
+  "version": "0.1.0",
+  "summary": "A short description of MetaheuristicKit.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/MetaheuristicKit",
+  "license": "MIT",
+  "authors": {
+    "DavidPiper94": "david.piper@udo.edu"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/MetaheuristicKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "MetaheuristicKit/Classes/**/*",
+  "resource_bundles": {
+    "MetaheuristicKit": [
+      "MetaheuristicKit/Assets/*.png"
+    ]
+  }
+}
