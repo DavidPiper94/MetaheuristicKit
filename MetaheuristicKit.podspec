@@ -1,27 +1,11 @@
-#
 # Be sure to run `pod lib lint MetaheuristicKit.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
 
 Pod::Spec.new do |s|
   s.name             = "MetaheuristicKit"
   s.version          = "0.1.0"
-  s.summary          = "A short description of MetaheuristicKit."
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-                       DESC
-
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/MetaheuristicKit"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.summary          = "A collection af metaheuristic algorithm to optimize the solution of a given problem."
+  s.description      = "This CocoaPod provides the ability to use metaheuristic algorithms, such as the genetic algorithm, to find a solution to a given problem."
+  s.homepage         = "https://github.com/DavidPiper94/MetaheuristicKit"
   s.license          = 'MIT'
   s.author           = { "DavidPiper94" => "david.piper@udo.edu" }
   s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/MetaheuristicKit.git", :tag => s.version.to_s }
