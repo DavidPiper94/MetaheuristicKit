@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MetaheuristicKit_Example', :exclusive => true do
+  pod 'MetaheuristicKit', :path => '../'
+end
+
+target 'MetaheuristicKit_Tests', :exclusive => true do
+  pod 'MetaheuristicKit', :path => '../'
+
+  
+end
