@@ -43,6 +43,13 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>03ACC64C40176F09699E79C176F78329</key>
+		<dict>
+			<key>fileRef</key>
+			<string>00A2C1DA4F239158E6915809572B3B82</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>0B2D453026FB23C7DF6464408D310470</key>
 		<dict>
 			<key>isa</key>
@@ -187,21 +194,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>1A2EAC54FB25F4CEE160852DD3C079EF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>577A52F3B86CCEACC50749DF6BC71D4C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Classes</string>
-			<key>path</key>
-			<string>Classes</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>1AB8281A362D05E3D875A7D5275A3AFA</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -212,6 +204,21 @@
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
+		</dict>
+		<key>1B30170CFC581478FCD1B5D26E19AF1B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F39D65175B0D38FC502380961B6C6179</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Classes</string>
+			<key>path</key>
+			<string>Classes</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>1BA2670FD0EA42CAA597250472A9B298</key>
 		<dict>
@@ -320,7 +327,7 @@
 			<string>C4A4B2D6D7ACC9203A4D14E2C90C6879</string>
 			<key>buildPhases</key>
 			<array>
-				<string>57C483726E539A32293B21593B3D2D80</string>
+				<string>4A1F051EF6F82D10400E8CFDC908BDCC</string>
 				<string>0BC3AC3BCDC01A599B2C9E714B121AD1</string>
 				<string>C1FD894496B1EEB8D5369ABCA7183D92</string>
 				<string>A9BE723B6F59C0BB4A8FCE0EBD9A1CBB</string>
@@ -487,6 +494,20 @@
 			<string>3E4E89230EF59BC255123B67864ACF77</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>4A1F051EF6F82D10400E8CFDC908BDCC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>69141F5A9DB599A85EBB31562AA3A98C</string>
+				<string>03ACC64C40176F09699E79C176F78329</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>4BDBF10614D667A58B534B884AFCE1D4</key>
 		<dict>
@@ -686,33 +707,6 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>577A52F3B86CCEACC50749DF6BC71D4C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ReplaceMe.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>57C483726E539A32293B21593B3D2D80</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AA270942D81DA3C1508855BC861B8856</string>
-				<string>710281A07ACEBD070EB1936BE7EB7CE3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
 		<key>612BA45CE2B90FBFAD1414BC4AC0D8C2</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -751,6 +745,13 @@
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
+		</dict>
+		<key>69141F5A9DB599A85EBB31562AA3A98C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F39D65175B0D38FC502380961B6C6179</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>69669F6A39D89BB90A08F9B276FC524B</key>
 		<dict>
@@ -791,13 +792,6 @@
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>710281A07ACEBD070EB1936BE7EB7CE3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>577A52F3B86CCEACC50749DF6BC71D4C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>72EF8C98C3CF9913AE3FB0D9BBBC9A91</key>
 		<dict>
@@ -909,7 +903,7 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>1A2EAC54FB25F4CEE160852DD3C079EF</string>
+				<string>1B30170CFC581478FCD1B5D26E19AF1B</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1114,13 +1108,6 @@
 			<string>PBXHeadersBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>AA270942D81DA3C1508855BC861B8856</key>
-		<dict>
-			<key>fileRef</key>
-			<string>00A2C1DA4F239158E6915809572B3B82</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>AB708971C1C9E17F82006E414D2077DA</key>
 		<dict>
@@ -1668,6 +1655,19 @@
 			<string>Support Files</string>
 			<key>path</key>
 			<string>Example/Pods/Target Support Files/MetaheuristicKit</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F39D65175B0D38FC502380961B6C6179</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>GeneticAlgorithm.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>

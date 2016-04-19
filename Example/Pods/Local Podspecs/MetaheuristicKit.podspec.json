@@ -1,9 +1,9 @@
 {
   "name": "MetaheuristicKit",
   "version": "0.1.0",
-  "summary": "A short description of MetaheuristicKit.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/MetaheuristicKit",
+  "summary": "A collection af metaheuristic algorithm to optimize the solution of a given problem.",
+  "description": "This CocoaPod provides the ability to use metaheuristic algorithms, such as the genetic algorithm, to find a solution to a given problem.",
+  "homepage": "https://github.com/DavidPiper94/MetaheuristicKit",
   "license": "MIT",
   "authors": {
     "DavidPiper94": "david.piper@udo.edu"

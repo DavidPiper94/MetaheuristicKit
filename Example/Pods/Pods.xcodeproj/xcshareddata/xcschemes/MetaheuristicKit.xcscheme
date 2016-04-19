@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'AD20FEDE63ED07121D9B21F4'
+               BlueprintIdentifier = 'CDF763EFABB372250E2E6E34'
                BlueprintName = 'MetaheuristicKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'MetaheuristicKit.framework'>
