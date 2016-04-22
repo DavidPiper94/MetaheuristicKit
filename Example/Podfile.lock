@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  MetaheuristicKit: 1d70ebf80cf15f7a45d399dfc5aee10448767cfc
+  MetaheuristicKit: b0e703ef38f9b7907d0473217bbd980bf334ae01
 
 COCOAPODS: 0.39.0

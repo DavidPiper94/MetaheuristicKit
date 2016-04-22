@@ -117,6 +117,7 @@ public class GeneticAlgorithm {
      - SeeAlso: "Essentials of Metaheuristics", Sean Luke, Seite 37
      */
     public func geneticAlgorithm(popsize popsize: Int, times: Int) -> [AnyObject] {
+                
         guard popsize >= 2
         else {
             fatalError("Die Population ist nicht groß genug!")
