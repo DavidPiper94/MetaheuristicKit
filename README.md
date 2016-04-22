@@ -11,7 +11,8 @@ Dieses Buch ist kostenfrei auf folgender Seite herunterzuladen:
 
 https://cs.gmu.edu/~sean/book/metaheuristics/
 
-Das Hauptaugenmerk liegt dabei auf dem genetischen Algorithmus und seinen Bestandteilen Selektion, Crossover und Mutation, später sollen aber noch andere Algorithmen hinzugefügt werden.
+Metaheuristiken sind Optimierungsalgorithmen, welche Probleme versuchen zu lösen, für die keine optimale Lösung bekannt ist. Zu dieser Gruppe von Algorithmen gehören unter anederem die Evolutions-Strategie, der genetische Algorithmus, Hill-Climbing und weitere.
+Das Hauptaugenmerk liegt bei diesem Projekt zunächst auf dem genetischen Algorithmus und seinen Bestandteilen Selektion, Crossover und Mutation, später sollen aber noch andere Algorithmen hinzugefügt werden.
 
 Das Framework liegt in Form eines CocoaPod-Projekts vor. CocoaPod ist ein Dependency Manager, welcher das Verwenden von externen Frameworks stark vereinfacht. 
 
