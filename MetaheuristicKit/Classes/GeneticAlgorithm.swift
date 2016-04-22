@@ -118,13 +118,11 @@ public class GeneticAlgorithm {
      */
     public func geneticAlgorithm(popsize popsize: Int, times: Int) -> [AnyObject] {
                 
-        guard popsize >= 2
-        else {
+        guard popsize >= 2 else {
             fatalError("Die Population ist nicht groß genug!")
         }
         
-        guard times >= 1
-        else {
+        guard times >= 1 else {
             fatalError("Ein Durchlauf ist zu wenig!")
         }
         
