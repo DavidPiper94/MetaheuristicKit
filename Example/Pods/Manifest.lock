@@ -1,5 +1,5 @@
 PODS:
-  - MetaheuristicKit (0.1.0)
+  - MetaheuristicKit (0.1.1)
 
 DEPENDENCIES:
   - MetaheuristicKit (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  MetaheuristicKit: b0e703ef38f9b7907d0473217bbd980bf334ae01
+  MetaheuristicKit: 42db647c7f2f6b3c80cb7a22d57830fdc867aeec
 
 COCOAPODS: 0.39.0

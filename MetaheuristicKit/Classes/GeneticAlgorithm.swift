@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 /**
  Der genetische Algorithmus ist ein Verfahren der metaheuristischen Optimierung und gehört zu den evolutionären Algorithmen. Durch Erstellung einer zufälligen ersten Population und anschließender Bewertung, Auswahl, Vermischung und Veränderung der Individuuen der Population wird eine (häufig annähernd) optimale Lösung zu einem gegebenen Problem gefunden.
  
