@@ -32,6 +32,9 @@ public class GeneticAlgorithm {
     public var tournamentSize:          Int = 2
     public var varianceOfRecombination: Float = 0.25
     
+    private var indexForSUS = 0
+    private var degreeOfFineness = 0
+    
     //----------------------------------------------------------------------------------------------
     // MARK: - Enums
     ///Definiert die Datentypen, für die der genetische Algorithmus verwendet werden kann.
@@ -198,7 +201,7 @@ public class GeneticAlgorithm {
      
      - Returns: Zwei Kinder als Tupel, die durch Vertauschung von Werten der beiden Eltern entstanden sind.
      */
-    public func crossover<T>(parentA parentA: [T], parentB: [T]) -> (childA: [T], childB: [T]) {
+    public func crossover(parentA parentA: [AnyObject], parentB: [AnyObject]) -> (childA: [AnyObject], childB: [AnyObject]) {
         switch self.crossover {
             case .onePointCrossover:                return onePointCrossover(parentA: parentA, parentB: parentB)
             case .twoPointCrossover:                return twoPointCrossover(parentA: parentA, parentB: parentB)
@@ -356,7 +359,7 @@ public class GeneticAlgorithm {
     }
     
     /**
-     <#Description#>
+     Durch eine zufällige Zahl wird aus dem durch die Hilfsfunktion builtUpFitnessArray zurückgegebenem Array ein Individuum selektiert.
      
      - Parameter population: Die gesamte Population, aus der ein Individuum selektiert werden soll.
      
@@ -364,7 +367,27 @@ public class GeneticAlgorithm {
      
      - SeeAlso: "Essentials of Metaheuristics", Sean Luke, Seite 44
      */
-    // TODO: public func stochasticUniversalSampling<T>(population pop: [[T]]) -> [T] {}
+    public func stochasticUniversalSampling(population pop: [[AnyObject]]) -> [AnyObject] {
+        let length = pop[0].count
+        
+        var fitnesses: [Int] = builtUpFitnessArray(population: pop)
+        
+        if (degreeOfFineness == 0) {
+            degreeOfFineness = Int(randomFloatInRange(firstNum: 0.0, secondNum: Float(fitnesses[length-1]/length)))
+        }
+        
+        if (indexForSUS == length) {
+            indexForSUS = 0
+        }
+        
+        while (fitnesses[indexForSUS] < degreeOfFineness) {
+            indexForSUS += 1
+        }
+        
+        degreeOfFineness += fitnesses[length-1]/length
+        
+        return pop[indexForSUS]
+    }
     
     /**
      Selection eines Individuums durch vergleich der Fitness mit zufälligem anderen Individuum.
