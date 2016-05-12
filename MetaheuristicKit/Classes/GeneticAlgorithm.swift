@@ -202,13 +202,19 @@ public class GeneticAlgorithm {
      - Returns: Zwei Kinder als Tupel, die durch Vertauschung von Werten der beiden Eltern entstanden sind.
      */
     public func crossover(parentA parentA: [AnyObject], parentB: [AnyObject]) -> (childA: [AnyObject], childB: [AnyObject]) {
-        switch self.crossover {
-            case .onePointCrossover:                return onePointCrossover(parentA: parentA, parentB: parentB)
-            case .twoPointCrossover:                return twoPointCrossover(parentA: parentA, parentB: parentB)
-            case .uniformCrossover:                 return uniformCrossover(parentA: parentA, parentB: parentB)
-            case .uniformCrossoverAmongKVektors:    return onePointCrossover(parentA: parentA, parentB: parentB) //return uniformCrossoverAmongKVectors(parents: [parentA, parentB])
-            case .lineRecombination:                return onePointCrossover(parentA: parentA, parentB: parentB) //return lineRecombination(parentA: parentA, parentB: parentB)
-            case .intermediateRecombination:        return onePointCrossover(parentA: parentA, parentB: parentB) //return intermediateRecombination(parentA: parentA, parentB: parentB)
+        if (self.type == .Bool) {
+            switch self.crossover {
+                case .onePointCrossover:                return onePointCrossover(parentA: parentA, parentB: parentB)
+                case .twoPointCrossover:                return twoPointCrossover(parentA: parentA, parentB: parentB)
+                case .uniformCrossover:                 return uniformCrossover(parentA: parentA, parentB: parentB)
+                default:                                return onePointCrossover(parentA: parentA, parentB: parentB)
+            }
+        } else {
+            switch self.crossover {
+                case .lineRecombination:                return lineRecombination(parentA: parentA as! [Float], parentB:parentB as! [Float])
+                case .intermediateRecombination:        return intermediateRecombination(parentA: parentA as! [Float], parentB: parentB as! [Float])
+                default:                                return lineRecombination(parentA: parentA as! [Float], parentB: parentB as! [Float])
+            }
         }
     }
     
@@ -540,7 +546,7 @@ public class GeneticAlgorithm {
      
      - SeeAlso: "Essentials of Metaheuristics", Sean Luke, Seite 42
      */
-    public func lineRecombination(parentA parentA: [Float], parentB: [Float]) -> (childA: [Float], childB: [Float]) {
+    public func lineRecombination(parentA parentA: [Float], parentB: [Float]) -> (childA: [AnyObject], childB: [AnyObject]) {
         var childA = parentA
         var childB = parentB
         
@@ -560,7 +566,7 @@ public class GeneticAlgorithm {
             }
         }
         
-        return (childA, childB)
+        return (childA as [AnyObject], childB as [AnyObject])
     }
     
     /**
@@ -573,7 +579,7 @@ public class GeneticAlgorithm {
      
      - SeeAlso: "Essentials of Metaheuristics", Sean Luke, Seite 42
      */
-    public func intermediateRecombination(parentA parentA: [Float], parentB: [Float]) -> (childA: [Float], childB: [Float]) {
+    public func intermediateRecombination(parentA parentA: [Float], parentB: [Float]) -> (childA: [AnyObject], childB: [AnyObject]) {
         var childA = parentA
         var childB = parentB
         
@@ -593,7 +599,7 @@ public class GeneticAlgorithm {
             childB[index] = s
         }
         
-        return (childA, childB)
+        return (childA as [AnyObject], childB as [AnyObject])
     }
 
     //----------------------------------------------------------------------------------------------
