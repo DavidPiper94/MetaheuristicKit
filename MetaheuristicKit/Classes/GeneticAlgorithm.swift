@@ -29,6 +29,7 @@ public class GeneticAlgorithm {
     public var probabilityOfMutation:  Float = 0.5
     public var probabilityOfCrossover: Float = 0.5
     public var rangeOfMutation:        Float = 3.0
+    public var tournamentSize:         Int = 2
     
     //----------------------------------------------------------------------------------------------
     // MARK: - Enums
@@ -72,8 +73,6 @@ public class GeneticAlgorithm {
         case bitFlipMutation
         ///Durch Auswahl von .boundedUniformConvolution wird die Funktion boundedUniformConvolution im genetischen Algorithmus zur Mutation verwendet. Dies ist nur bei der Auswahl von .Float als Typ möglich.
         case boundedUniformConvolution
-        ///Durch Auswahl von .gaussioanConvolution wird die Funktion gaussioanConvolution im genetischen Algorithmus zur Mutation verwendet. Dies ist nur bei der Auswahl von .Float als Typ möglich.
-        case gaussioanConvolution
     }
     
     
@@ -220,7 +219,6 @@ public class GeneticAlgorithm {
         switch self.mutate {
             case .bitFlipMutation:                  return bitFlipMutation(individual: individual as! [Bool])
             case .boundedUniformConvolution:        return boundedUniformConvolution(individual: individual as! [Float])
-            case .gaussioanConvolution:             return boundedUniformConvolution(individual: individual as! [Float]) // return gaussioanConvolution()
         }
     }
     
@@ -368,7 +366,7 @@ public class GeneticAlgorithm {
     // TODO: public func stochasticUniversalSampling<T>(population pop: [[T]]) -> [T] {}
     
     /**
-     <#Description#>
+     Selection eines Individuums durch vergleich der Fitness mit zufälligem anderen Individuum.
      
      - Parameter population: Die gesamte Population, aus der ein Individuum selektiert werden soll.
      
@@ -376,7 +374,19 @@ public class GeneticAlgorithm {
      
      - SeeAlso: "Essentials of Metaheuristics", Sean Luke, Seite 45
      */
-    // TODO: public func tournamentSelection<T>(population pop: [[T]]) -> [T] {}
+    public func tournamentSelection(population pop: [[AnyObject]]) -> [AnyObject] {
+        var best = pop[Int(randomFloatInRange(firstNum: 0.0, secondNum: Float(pop.count)))]
+        var next: [AnyObject]
+        
+        for _ in 0...tournamentSize {
+            next = pop[Int(randomFloatInRange(firstNum: 0.0, secondNum: Float(pop.count)))]
+            if assessFitness(individual: next) >= assessFitness(individual: best) {
+                best = next
+            }
+        }
+        
+        return best
+    }
     
     //----------------------------------------------------------------------------------------------
     // MARK: - Crossover
@@ -541,18 +551,6 @@ public class GeneticAlgorithm {
         
         return newIndividual
     }
-    
-    /**
-     <#Description#>
-     
-     - Parameter <#Param1#>: <#Description#>
-     - Parameter <#Param2#>: <#Description#>
-     
-     - Returns: <#ReturnValue#>
-     
-     - SeeAlso: "Essentials of Metaheuristics", Sean Luke, Seite 23
-     */
-    // TODO: public func gaussioanConvolution() {}
     
     //----------------------------------------------------------------------------------------------
     // MARK: - Helper
