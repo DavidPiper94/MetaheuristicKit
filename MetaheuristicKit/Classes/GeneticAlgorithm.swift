@@ -23,13 +23,14 @@ public class GeneticAlgorithm {
     public var mutate:     MutateAlgorithmen
     public var fitnessFunction:  [AnyObject] -> Int
     
-    public var sizeOfIndividual:       Int = 5
-    public var minFloatValue:          Float = 0.0
-    public var maxFloatValue:          Float = 50.0
-    public var probabilityOfMutation:  Float = 0.5
-    public var probabilityOfCrossover: Float = 0.5
-    public var rangeOfMutation:        Float = 3.0
-    public var tournamentSize:         Int = 2
+    public var sizeOfIndividual:        Int = 5
+    public var minFloatValue:           Float = 0.0
+    public var maxFloatValue:           Float = 50.0
+    public var probabilityOfMutation:   Float = 0.5
+    public var probabilityOfCrossover:  Float = 0.5
+    public var rangeOfMutation:         Float = 3.0
+    public var tournamentSize:          Int = 2
+    public var varianceOfRecombination: Float = 0.25
     
     //----------------------------------------------------------------------------------------------
     // MARK: - Enums
@@ -202,9 +203,9 @@ public class GeneticAlgorithm {
             case .onePointCrossover:                return onePointCrossover(parentA: parentA, parentB: parentB)
             case .twoPointCrossover:                return twoPointCrossover(parentA: parentA, parentB: parentB)
             case .uniformCrossover:                 return uniformCrossover(parentA: parentA, parentB: parentB)
-            //case .uniformCrossoverAmongKVektors:    return uniformCrossoverAmongKVectors(parents: [parentA, parentB])
-            case .lineRecombination:                return onePointCrossover(parentA: parentA, parentB: parentB) //return lineRecombination()
-            case .intermediateRecombination:        return onePointCrossover(parentA: parentA, parentB: parentB) //return intermediateRecombination()
+            case .uniformCrossoverAmongKVektors:    return onePointCrossover(parentA: parentA, parentB: parentB) //return uniformCrossoverAmongKVectors(parents: [parentA, parentB])
+            case .lineRecombination:                return onePointCrossover(parentA: parentA, parentB: parentB) //return lineRecombination(parentA: parentA, parentB: parentB)
+            case .intermediateRecombination:        return onePointCrossover(parentA: parentA, parentB: parentB) //return intermediateRecombination(parentA: parentA, parentB: parentB)
         }
     }
     
@@ -507,24 +508,45 @@ public class GeneticAlgorithm {
     }
     
     /**
-     <#Description#>
+     Werte zweier Individuen werden nicht mehr einfach miteinander vertauscht, sondern untereinander verrechnet.
      
-     - Parameter <#Param1#>: <#Description#>
-     - Parameter <#Param2#>: <#Description#>
+     - Parameter parentA: Elternindividuum
+     - Parameter parentB: Elternindividuum
      
-     - Returns: <#ReturnValue#>
+     - Returns: Zwei Kinder als Tupel, die durch Vertauschung von Werten der beiden Eltern entstanden sind.
      
      - SeeAlso: "Essentials of Metaheuristics", Sean Luke, Seite 42
      */
-    // TODO: public func lineRecombination() {}
+    public func lineRecombination(parentA parentA: [Float], parentB: [Float]) -> (childA: [Float], childB: [Float]) {
+        var childA = parentA
+        var childB = parentB
+        
+        let a = randomFloatInRange(firstNum: -varianceOfRecombination, secondNum: 1+varianceOfRecombination)
+        let b = randomFloatInRange(firstNum: -varianceOfRecombination, secondNum: 1+varianceOfRecombination)
+        
+        var t: Float
+        var s: Float
+        
+        for index in 0...parentA.count-1 {
+            t = a * parentA[index] + (1-a) * parentB[index]
+            s = b * parentB[index] + (1-b) * parentA[index]
+            
+            if (t >= minFloatValue && s <= maxFloatValue) {
+                childA[index] = t
+                childB[index] = s
+            }
+        }
+        
+        return (childA, childB)
+    }
     
     /**
-     <#Description#>
+     Werte zweier Individuen werden nicht mehr einfach miteinander vertauscht, sondern untereinander verrechnet.
      
-     - Parameter <#Param1#>: <#Description#>
-     - Parameter <#Param2#>: <#Description#>
+     - Parameter parentA: Elternindividuum
+     - Parameter parentB: Elternindividuum
      
-     - Returns: <#ReturnValue#>
+     - Returns: Zwei Kinder als Tupel, die durch Vertauschung von Werten der beiden Eltern entstanden sind.
      
      - SeeAlso: "Essentials of Metaheuristics", Sean Luke, Seite 42
      */
