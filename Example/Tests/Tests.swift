@@ -4,26 +4,32 @@ import MetaheuristicKit
 
 class Tests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var GABool = GeneticAlgorithm(type: .Bool, fitnessFunction: (GeneticAlgorithm.simpleBoolFitnessFunction))
+        
+    var GAFloat = GeneticAlgorithm(type: .Float, fitnessFunction: (GeneticAlgorithm.simpleFloatFitnessFunction))
+    
+    
+    func testRandomFloatInRange() {
+        let random = GABool.randomFloatInRange(firstNum: 0.0, secondNum: 1.0)
+        
+        XCTAssertTrue(random <= 1.0 && random >= 0.0)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testValueSwap() {
+        var valueA = 1
+        var valueB = 2
+        
+        GABool.valueSwap(value1: &valueA, value2: &valueB)
+        
+        XCTAssertTrue(valueA == 2)
+        XCTAssertTrue(valueB == 1)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testContainsOnlyZeros() {
+        let arrayWithOnlyZeros = [0,0,0,0]
+        let arrayWithNotOnlyZeros = [1,0,1,1]
+        
+        XCTAssertTrue(GABool.containsOnlyZeros(array: arrayWithOnlyZeros))
+        XCTAssertFalse(GABool.containsOnlyZeros(array: arrayWithNotOnlyZeros))
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
