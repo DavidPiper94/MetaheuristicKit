@@ -550,7 +550,28 @@ public class GeneticAlgorithm {
      
      - SeeAlso: "Essentials of Metaheuristics", Sean Luke, Seite 42
      */
-    // TODO: public func intermediateRecombination() {}
+    public func intermediateRecombination(parentA parentA: [Float], parentB: [Float]) -> (childA: [Float], childB: [Float]) {
+        var childA = parentA
+        var childB = parentB
+        
+        var t: Float
+        var s: Float
+        
+        for index in 0...parentA.count-1 {
+            repeat {
+                let a = randomFloatInRange(firstNum: -varianceOfRecombination, secondNum: 1+varianceOfRecombination)
+                let b = randomFloatInRange(firstNum: -varianceOfRecombination, secondNum: 1+varianceOfRecombination)
+                
+                t = a * parentA[index] + (1-a) * parentB[index]
+                s = b * parentB[index] + (1-b) * parentA[index]
+            } while (t < minFloatValue || s > maxFloatValue)
+            
+            childA[index] = t
+            childB[index] = s
+        }
+        
+        return (childA, childB)
+    }
 
     //----------------------------------------------------------------------------------------------
     // MARK: - Mutation
