@@ -202,7 +202,7 @@ public class GeneticAlgorithm {
             case .onePointCrossover:                return onePointCrossover(parentA: parentA, parentB: parentB)
             case .twoPointCrossover:                return twoPointCrossover(parentA: parentA, parentB: parentB)
             case .uniformCrossover:                 return uniformCrossover(parentA: parentA, parentB: parentB)
-            case .uniformCrossoverAmongKVektors:    return onePointCrossover(parentA: parentA, parentB: parentB) //return uniformCrossoverAmongKVektors()
+            //case .uniformCrossoverAmongKVektors:    return uniformCrossoverAmongKVectors(parents: [parentA, parentB])
             case .lineRecombination:                return onePointCrossover(parentA: parentA, parentB: parentB) //return lineRecombination()
             case .intermediateRecombination:        return onePointCrossover(parentA: parentA, parentB: parentB) //return intermediateRecombination()
         }
@@ -480,7 +480,31 @@ public class GeneticAlgorithm {
      
      - SeeAlso: "Essentials of Metaheuristics", Sean Luke, Seite 41
      */
-    public func uniformCrossoverAmongKVectors(){}
+    public func uniformCrossoverAmongKVectors<T>(parents parents: [[T]]) -> [[T]] {
+        var mix: [T] = []
+        var result: [[T]] = []
+        var individual: [T]
+        
+        for index in 0...parents.count-1 {
+            if probabilityOfCrossover >= randomFloatInRange(firstNum: 0.0, secondNum: 1.0) {
+                
+                for otherIndex in 0...parents.count-1 {
+                    individual = parents[otherIndex]
+                    mix[otherIndex] = individual[index]
+                }
+                
+                randomVectorShuffle(&mix)
+                
+                for otherIndex in 0...parents.count-1 {
+                    individual = parents[otherIndex]
+                    individual[index] = mix[otherIndex]
+                    result[otherIndex] = individual
+                }
+            }
+        }
+        
+        return result
+    }
     
     /**
      <#Description#>
